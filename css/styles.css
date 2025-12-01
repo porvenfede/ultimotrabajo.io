@@ -1,0 +1,447 @@
+/* Paleta de Colores y Variables */
+:root {
+    --primary-red: #E63946; /* Rojo vibrante */
+    --dark-red: #A8202A; /* Rojo oscuro para acentos */
+    --gold: #FFC300; /* Dorado para acentos y detalles */
+    --light-grey: #f8f9fa; /* Gris claro para fondos */
+    --dark-grey: #343a40;  /* Gris oscuro para texto */
+    --white: #ffffff;  /* Blanco */
+    --black: #212529;  /* Negro */
+}
+
+/* Base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--primary-red);
+    letter-spacing: 1.5px;
+}
+
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+a {
+    color: var(--dark-red);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-red);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- Barra de Navegación (NAV) --- */
+nav {
+    background-color: var(--black); 
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo a {
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Por defecto, en escritorio, muestra el menú horizontal */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-red);
+    text-decoration: none;
+}
+/* Fin NAV */
+
+
+/* Header (Solo para Index.html) */
+header {
+    background: linear-gradient(to right, var(--dark-red), var(--primary-red));
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: var(--white);
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Botón (Simplificado) */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--gold); 
+    color: var(--dark-grey); 
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: background-color 0.2s ease; 
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-red); 
+    color: var(--white); 
+    text-decoration: none;
+}
+
+/* Hero Banner (Solo para Index.html) */
+#hero-banner {
+    background: url('https://via.placeholder.com/1500x400/FFD700/808080?text=Fondo+Hamburguesa+Premium') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+#hero-banner h2 {
+    font-size: 3em;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+
+/* Secciones Generales */
+.section-padded {
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--dark-red);
+}
+
+/* Grid de 2 Columnas (para Nosotros/Contacto) */
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Por defecto, 2 columnas en escritorio/tablet */
+    gap: 40px;
+    align-items: center;
+}
+
+.grid-2-cols .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Items Generales (usado en Menú y Promociones) */
+.menu-grid {
+    /* Auto-fit asegura que las columnas se adapten al espacio disponible */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ajuste para que los items del index sean enlaces que ocupen el 100% del contenedor */
+    display: block; 
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-decoration: none; /* Evita subrayado al hacer hover en el index */
+}
+
+.menu-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-red);
+}
+
+.menu-item h3 {
+    color: var(--dark-red);
+    font-size: 1.6em;
+}
+
+.menu-item .price {
+    font-size: 1.4em;
+    color: var(--primary-red);
+    font-weight: bold;
+    background-color: var(--gold);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Sección de Contacto */
+.social-links a {
+    display: inline-block;
+    background-color: var(--dark-red);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-red);
+    text-decoration: none;
+}
+
+.map-content iframe {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+
+/* --- Responsiveness (Media Queries) --- */
+
+
+/* Estilos para Pantallas Grandes (Tablet en vertical y Escritorio) */
+@media (min-width: 801px) {
+    /* Navbar: Asegura que el logo y el menú estén separados en escritorio */
+    nav .container {
+        justify-content: space-between;
+    }
+    nav ul {
+        display: flex;
+    }
+}
+
+
+/* Estilos para Tablets y Móviles (Máximo 800px de ancho) */
+@media (max-width: 800px) {
+    
+    .container {
+        width: 95%; 
+        padding: 10px 0;
+    }
+    
+    /* 1. Navbar: Implementa un estilo para móvil (ocultamos los links por defecto) */
+    nav .container {
+        /* En móvil, solo queremos el logo */
+        justify-content: center; 
+        flex-direction: column;
+    }
+
+    nav ul {
+        /* El menú completo se mostraría si tuvieras un botón "hamburguesa" */
+        display: none; 
+    }
+
+    /* 2. Cuadrículas: Las secciones de 2 columnas se apilan */
+    .grid-2-cols {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 30px;
+    }
+
+    /* 3. Tipografía y Espaciado */
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    
+    header {
+        padding: 30px 0;
+    }
+    
+    #hero-banner {
+        padding: 60px 0;
+    }
+}
+
+/* Estilos para Móviles (Máximo 500px de ancho) */
+@media (max-width: 500px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    
+    /* 4. Asegurar que los items de menú/promoción se apilen en una sola columna en móvil */
+    .menu-grid {
+        /* Permite que el minmax tome el control, pero si hay poco espacio (menos de 300px), se forzará a 1 columna */
+        grid-template-columns: 1fr;
+    }
+
+    /* 5. Ajuste en Footer */
+    footer p {
+        padding: 0 10px;
+    }
+}
+/* --- Barra de Navegación (NAV) --- */
+nav {
+    background-color: var(--black); 
+    padding: 15px 0;
+}
+
+nav .container {
+    display: flex;
+    /* En escritorio/tablet grande, separa el logo del menú */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+}
+/* ... (El resto del estilo del logo sigue igual) ... */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Menú horizontal por defecto en escritorio */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+/* ... (El resto de estilos de enlaces siguen igual) ... */
+/* Fin NAV */
+
+
+/* --- Responsiveness (Media Queries) --- */
+
+/* Estilos para Tablet (Máximo 800px de ancho) */
+@media (max-width: 800px) {
+    
+    .container {
+        width: 95%; 
+        padding: 10px 0;
+    }
+    
+    /* 1. Navbar: Apila el Logo y el Menú verticalmente en tablet/móvil */
+    nav .container {
+        flex-direction: column; /* Apila logo y ul */
+        padding: 10px 20px;
+    }
+    
+    nav .logo {
+        margin-bottom: 10px; /* Espacio entre logo y menú */
+    }
+
+    nav ul {
+        display: flex; /* Asegura que la lista se muestre */
+        flex-direction: column; /* Muestra los enlaces verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espacio entre los enlaces verticales */
+    }
+    
+    /* 2. Cuadrículas: Las secciones de 2 columnas se apilan */
+    .grid-2-cols {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    /* 3. Tipografía y Espaciado */
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    
+    header {
+        padding: 30px 0;
+    }
+    
+    #hero-banner {
+        padding: 60px 0;
+    }
+}
+
+/* Estilos para Móviles Muy Pequeños (Máximo 500px de ancho) */
+@media (max-width: 500px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    
+    /* Asegurar que los items de menú/promoción se apilen en una sola columna en móvil */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ITEMS DEL MENÚ (UNIFORMIDAD VISUAL) */
+
+/* 1. Definimos un contenedor fijo para la imagen */
+.menu-item img {
+    /* Estas reglas fuerzan a todas las imágenes del menú a tener un tamaño visiblemente uniforme */
+    width: 100%; /* Ocupa el 100% del ancho del contenedor del item de menú */
+    height: 180px; /* <--- Altura fija deseada para uniformidad */
+    
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-red);
+    
+    /* 2. CLAVE: Técnica object-fit para evitar la distorsión */
+    object-fit: cover; /* Esto garantiza que la imagen llene el espacio de 250x180px, recortando si es necesario, sin estirarla. */
+}
+
+/* Reducimos el tamaño de la imagen en dispositivos más pequeños para que no ocupe demasiado espacio */
+@media (max-width: 500px) {
+    .menu-item img {
+        height: 150px; /* Reducimos la altura en móvil para ahorrar espacio vertical */
+    }
+}
